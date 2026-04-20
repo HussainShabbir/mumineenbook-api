@@ -9,7 +9,7 @@ export class UsersService {
     @InjectModel(User.name) private userModel: Model<User>,
   ) {}
 
-  async create(data: any): Promise<User> {
+  async create(data: User): Promise<User> {
     const user = new this.userModel(data);
     return user.save();
   }
